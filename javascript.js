@@ -8,10 +8,6 @@ function getComputerChoice() {
     return choice;
 }
 
-let computerSelection = getComputerChoice();
-//testing computerSelection
-console.log(computerSelection);
-
 //create function playRound and return winner via if/else logic
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === 'rock') {
@@ -38,9 +34,32 @@ function playRound(playerSelection, computerSelection) {
         } else if (computerSelection === 'paper') {
             return "Paper vs Paper, it's a tie!";
         }
+    } else {
+        return "Invalid input, please pick rock, paper, or scissors."
     }
 }
 
-//player selection here
-let playerSelection = 'paper';
-console.log(playRound(playerSelection, computerSelection));
+//create function game, play 5 rounds and report if you lose or win each time
+function game() {
+    //counting rounds, starting at zero and adding +1 to counter on each loop
+    let counter = 0;
+
+    
+
+    //game start
+    while (counter < 5) {
+        //prompt for player selection
+        let playerSelection = prompt('Rock, Paper, or Scissors?', 'rock');
+        //make sure prompt isn't case sensitive
+        playerSelection = playerSelection.toLowerCase();
+
+        //computer choice
+        let computerSelection = getComputerChoice();
+        console.log(playRound(playerSelection, computerSelection));
+        counter++;        
+    }
+}
+
+
+
+game();
