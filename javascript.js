@@ -22,9 +22,25 @@ function playRound(playerSelection, computerSelection) {
         } else if (computerSelection === 'rock') {
             return "Rock vs Rock, it's a tie!";
         }
+    } else if (playerSelection === 'scissors') {
+        if (computerSelection === 'paper') {
+            return "Scissors vs Paper, you win!";
+        } else if (computerSelection === 'rock') {
+            return "Scissors vs Rock, you lose.";
+        } else if (computerSelection === 'scissors') {
+            return "Scissors vs Scissors, it's a tie!";
+        }
+    } else if (playerSelection === 'paper') {
+        if (computerSelection === 'rock') {
+            return "Paper vs Rock, you win!";
+        } else if (computerSelection === 'scissors') {
+            return "Paper vs Scissors, you lose.";
+        } else if (computerSelection === 'paper') {
+            return "Paper vs Paper, it's a tie!";
+        }
     }
 }
 
 //player selection here
-let playerSelection = 'rock';
+let playerSelection = 'paper';
 console.log(playRound(playerSelection, computerSelection));
